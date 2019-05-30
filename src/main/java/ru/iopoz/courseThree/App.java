@@ -21,6 +21,8 @@ public class App
             taskOne((Object[]) arrays.get(i + 1), FIRST_ELEMENT, SECOND_ELEMENT);
             taskTwo((Object[]) arrays.get(i + 1));
         }
+
+        taskThree();
     }
 
     public static void taskOne(Object[] array, int firstValue, int secondValue) throws Exception {
@@ -50,5 +52,22 @@ public class App
         Collections.addAll(newList,array);
         newList.add(newList.get(0));
         return (ArrayList) newList;
+    }
+
+
+    public static void taskThree(){
+        Box<Apple> boxWithApple = new Box<Apple>(new Apple(), new Apple(), new Apple());
+        Box<Orange> boxWithOranges = new Box<Orange>(new Orange(), new Orange());
+        Box<Orange> secondBoxWithOranges = new Box<Orange>(new Orange(), new Orange());
+        Box anotherBox = new Box<>();
+        System.out.println("A box of apples weighs " + boxWithApple.getWeight());
+        System.out.println("A box of oranges weight " + boxWithOranges.getWeight());
+        System.out.println(boxWithApple.compare(boxWithOranges));
+        boxWithOranges.replaceFruitsToAnotherBox(anotherBox);
+        boxWithApple.replaceFruitsToAnotherBox(anotherBox);
+        secondBoxWithOranges.replaceFruitsToAnotherBox(anotherBox);
+        System.out.println(boxWithOranges.getBox());
+        System.out.println(boxWithApple.getBox());
+        System.out.println(anotherBox.getBox());
     }
 }
