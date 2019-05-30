@@ -1,10 +1,13 @@
 package ru.iopoz.courseThree;
 
 import static org.junit.Assert.assertTrue;
-import static ru.iopoz.courseThree.App.taskOne;
+import static ru.iopoz.courseThree.HW1.App.taskOne;
 
-import org.junit.Assert;
 import org.junit.Test;
+import ru.iopoz.courseThree.HW2.DBHelper;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
 
 /**
  * Unit test for simple App.
@@ -34,6 +37,25 @@ public class AppTest
         } catch (Exception e){
             assertTrue(true);
         }
+    }
 
+    @Test
+    public void addUser() throws SQLException {
+        DBHelper dbConnector = new DBHelper();
+        System.out.println(dbConnector.addUser("iopoz"));
+    }
+
+    @Test
+    public void updateUser() throws SQLException {
+        DBHelper dbConnector = new DBHelper();
+        int userId = dbConnector.getUserId("iopoz");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        System.out.println(dbConnector.updateUser(userId, "iopoz"+timestamp.getTime()));
+    }
+
+    @Test
+    public void getAllUser() throws SQLException {
+        DBHelper dbConnector = new DBHelper();
+        System.out.println(dbConnector.getAllUsers());
     }
 }
