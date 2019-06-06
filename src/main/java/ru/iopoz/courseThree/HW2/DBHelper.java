@@ -9,6 +9,7 @@ import java.util.List;
 
 public class DBHelper {
     private static final String DB_STR = "jdbc:sqlite:D:\\git\\lessons\\JavaLessonsPartThree\\src\\main\\java\\ru\\iopoz\\courseThree\\HW2\\db.sqlite";
+    private static final String SQL_USER_ID_STATEMENT = "Select user_id from user where user_nick='";
 
     private static DBHelper instance = null;
 
@@ -39,7 +40,7 @@ public class DBHelper {
 
     public int getUserId(String userNick){
         try(Statement statement = this.connection.createStatement()){
-            String sqlStr = "Select user_id from user where user_nick='" + userNick + "'";
+            String sqlStr = SQL_USER_ID_STATEMENT + userNick + "'";
             ResultSet resultSet = statement.executeQuery(sqlStr);
             return resultSet.getInt("user_id");
         } catch (SQLException e){
@@ -50,7 +51,7 @@ public class DBHelper {
 
     public boolean isUserExists(String userNick){
         try(Statement statement = this.connection.createStatement()){
-            String sqlStr = "Select user_id from user where user_nick='" + userNick + "'";
+            String sqlStr = SQL_USER_ID_STATEMENT + userNick + "'";
             ResultSet resultSet = statement.executeQuery(sqlStr);
             return !resultSet.isClosed();
         } catch (SQLException e){
