@@ -41,9 +41,9 @@ public class AppTestsHW5 {
             List res = (List) getListTail(inputList);
             System.out.println(res);
             if (isListHasValue(inputList)){
-                LOGGER.info("The conditions are done");
+                System.out.println("correct conditions");
             } else {
-                LOGGER.warn("The conditions are'n done");
+                System.out.println("incorrect conditions");
             }
         }
 

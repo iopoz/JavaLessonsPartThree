@@ -28,6 +28,12 @@ public class AppMain {
     }
 
     public static Boolean isListHasValue(List inputList){
-        return inputList.size() > 2 && inputList.indexOf(1) > -1 && inputList.indexOf(4)> -1;
+        if(inputList.size() > 1 && inputList.indexOf(1) > -1 && inputList.indexOf(4)> -1){
+            LOGGER.info("The conditions are done");
+            return true;
+        } else {
+            LOGGER.warn("The conditions are'n done");
+            return false;
+        }
     }
 }
