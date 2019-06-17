@@ -15,12 +15,12 @@ import static ru.iopoz.courseThree.HW6.AppMain.getListTail;
 import static ru.iopoz.courseThree.HW6.AppMain.isListHasValue;
 
 @RunWith(value = Parameterized.class)
-public class AppTestsHW5Parametrized {
+public class AppTestsHW6Parametrized {
     private List<Integer> inputArray;
     private List<Integer> resArray;
     private boolean conditionBool;
 
-    public AppTestsHW5Parametrized(List<Integer> input, List<Integer> output, boolean flag){
+    public AppTestsHW6Parametrized(List<Integer> input, List<Integer> output, boolean flag){
         this.inputArray = input;
         this.resArray = output;
         this.conditionBool = flag;

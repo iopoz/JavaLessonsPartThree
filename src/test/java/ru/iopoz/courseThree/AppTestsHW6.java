@@ -1,19 +1,17 @@
 package ru.iopoz.courseThree;
 
 import org.apache.log4j.Logger;
-import org.junit.Before;
 import org.junit.Test;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static ru.iopoz.courseThree.HW6.AppMain.getListTail;
 import static ru.iopoz.courseThree.HW6.AppMain.isListHasValue;
 
-public class AppTestsHW5 {
-    private static final Logger LOGGER = Logger.getLogger(AppTestsHW5.class);
+public class AppTestsHW6 {
+    private static final Logger LOGGER = Logger.getLogger(AppTestsHW6.class);
     @Test
     public void checkGetTailMethod(){
         int[] correctArray = new int[]{1,2,3,4,5,4,3,2,1};
