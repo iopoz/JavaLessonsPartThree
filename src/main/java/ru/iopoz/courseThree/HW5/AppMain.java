@@ -33,7 +33,7 @@ public class AppMain {
             e.printStackTrace();
         }
 
-        //System.out.println("Go-Go-Go!");
+        System.out.println("Go-Go-Go!");
         time = System.currentTimeMillis();
 
         try {
